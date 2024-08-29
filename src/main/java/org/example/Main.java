@@ -89,7 +89,7 @@ public class Main {
                         System.out.println("=========================================");
                         System.out.println(" 1. Ingresar una reserva"                 );
                         System.out.println(" 2. Eliminar una reserva"                 );
-                        System.out.println(" 3. Buscar una reserva"                   );
+                        System.out.println(" 3. Buscar reserva por id de un cliente"  );
                         System.out.println(" 4. Mostrar lista de reservas"            );
                         System.out.println(" 0. Salir"                                );
                         System.out.println("=========================================");
@@ -150,7 +150,7 @@ public class Main {
                                             int numPeople = Integer.parseInt(scanner.nextLine());
 
                                             ActivityReserve activityReserve = new ActivityReserve(reserveId, client, startDate, endDate, activityName, numPeople);
-                                            park.addReserve(activityReserve);
+                                            park.addReserve(client, activityReserve);
 
                                             flag = true;
                                             break;
@@ -160,7 +160,7 @@ public class Main {
                                             int numTent = Integer.parseInt(scanner.nextLine());
 
                                             CampingReserve campingReserve = new CampingReserve(reserveId, client, startDate, endDate, numTent);
-                                            park.addReserve(campingReserve);
+                                            park.addReserve(client,campingReserve);
 
                                             flag = true;
                                             break;
@@ -169,7 +169,7 @@ public class Main {
                                             int numPerson = Integer.parseInt(scanner.nextLine()); // numero de personas que van a alojarse
 
                                             CabinReserve cabinReserve = new CabinReserve(reserveId, client, startDate, endDate, numPerson);
-                                            park.addReserve(cabinReserve);
+                                            park.addReserve(client,cabinReserve);
 
                                             flag = true;
                                             break;

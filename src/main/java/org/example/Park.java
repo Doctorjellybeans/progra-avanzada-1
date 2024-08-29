@@ -1,8 +1,7 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
+import java.time.LocalDate;
 
 public class Park {
 
@@ -16,7 +15,6 @@ public class Park {
     // Constructor
 
     public Park(int maxCampingCapacity, int maxCabinCapacity, int maxActitvityCapacity) {
-        this.reserveList = new ArrayList<>();
         this.reserveList2 = new HashMap<>();
         this.maxCampingCapacity = maxCampingCapacity;
         this.maxCabinCapacity = maxCabinCapacity;
@@ -25,9 +23,15 @@ public class Park {
 
     // Metodos
     // Añade una reserva a la lista de reservas
-    public void addReserve(Reserve reserve) {
+    public void addReserve(Client client, Reserve reserve) {
+        ArrayList<Reserve> reservesOfClient = reserveList2.get(client);
+        if (reservesOfClient == null) {
+            reservesOfClient = new ArrayList<>();
+            reserveList2.put(client,reservesOfClient);
+        }
+
         if (this.isFull(reserve)) {
-            reserveList.add(reserve);
+            reservesOfClient.add(reserve);
             System.out.println("Reserva añadida exitosamente");
         } else {
             System.out.println("Capacidad maxima alcanzada para el tipo de reserva");
@@ -39,64 +43,94 @@ public class Park {
         System.out.println("Ingrese la id de la reserva que desea cancelar");
         int reserveId = Integer.parseInt(scanner.nextLine());
 
-        // Cancelar solo si la id encontrada es igual a la proporcionada
-        reserveList.removeIf(reserve -> reserve.getReserveId() == reserveId);
-        System.out.println("Reserva cancelada con exito!");
+        // Busca y cancela una reserva
+        for (Map.Entry<Client, ArrayList<Reserve>> entry : reserveList2.entrySet()) {
+            ArrayList<Reserve> reservas = entry.getValue();
+            reservas.removeIf(reserve -> reserve.getReserveId() == reserveId);
+            if (reservas.isEmpty()) {
+                reserveList2.remove(entry.getKey());
+            }
+        }
+        System.out.println("Reserva cancelada con éxito!");
     }
     
     public void searchReserve(Scanner scanner) {
-        System.out.println("Ingrese el id de la reserva que desea buscar");
-        int idReserve = Integer.parseInt(scanner.nextLine());
-        boolean found = false; // Agregar esta variable para el control de flujo
+        System.out.println("Ingrese la ID del cliente para buscar sus reservas:");
+        String clientId = scanner.nextLine();
 
-        for (Reserve reserve : reserveList) {
-            if (reserve.getReserveId() == idReserve) { // usar getter para mayor encapsulamiento
-                System.out.println("La reserva sí existe!");
-                found = true;
+        // Buscar cliente con la ID proporcionada
+        Client clientToFind = null;
+        for (Client client : reserveList2.keySet()) {
+            if (Objects.equals(client.getRun(), clientId)) {
+                clientToFind = client;
                 break;
             }
         }
 
-        if (!found) {
-            System.out.println("La reserva no existe!");
+        if (clientToFind == null) {
+            System.out.println("Cliente no encontrado.");
+            return;
         }
-    }
+
+        // Obtener las reservas del cliente encontrado
+        ArrayList<Reserve> reservas = reserveList2.get(clientToFind);
+
+        if (reservas == null || reservas.isEmpty()) {
+            System.out.println("No hay reservas para este cliente.");
+        } else {
+            System.out.println("Reservas para el cliente " + clientToFind.getName() + ":");
+            for (Reserve reserva : reservas) {
+                reserva.showDetails();
+            }
+        }    }
 
     // Mostrar las reservas ingresadas
     public void showReserveList() {
-        for (Reserve reserve : reserveList) {
-            reserve.showDetails();
+        for (Map.Entry<Client, ArrayList<Reserve>> entry : reserveList2.entrySet()) {
+            Client client = entry.getKey();
+            ArrayList<Reserve> reservas = entry.getValue();
+            System.out.println("Reservas para " + client.getRun() + ":");
+            for (Reserve reserva : reservas) {
+                reserva.showDetails();
+            }
         }
-        System.out.println("Total de reservas = " + reserveList.size());
     }
 
     // Verificar si se alcanzo la capacidad maxima
     public boolean isFull(Reserve newReserve) {
 
-        // Uso de stream en lista de reservas para filtrar y contar cada vez que condicion
-        // (si clase es una instancia de subclase -> true) sea verdadera
-        long countCampingReserves = reserveList.stream().filter(reserve -> reserve instanceof CampingReserve).count();
-        long countActivityReserves = reserveList.stream().filter(reserve -> reserve instanceof ActivityReserve).count();
-        long countCabinReserves = reserveList.stream().filter(reserve -> reserve instanceof CabinReserve).count();
+        // Contar reservas de cada tipo
+        long countCampingReserves = reserveList2.values().stream()
+                .flatMap(ArrayList::stream)
+                .filter(reserve -> reserve instanceof CampingReserve)
+                .count();
+        long countActivityReserves = reserveList2.values().stream()
+                .flatMap(ArrayList::stream)
+                .filter(reserve -> reserve instanceof ActivityReserve)
+                .count();
+        long countCabinReserves = reserveList2.values().stream()
+                .flatMap(ArrayList::stream)
+                .filter(reserve -> reserve instanceof CabinReserve)
+                .count();
 
-        // Queda espacio aun?
+        // Verificar espacio disponible
         if (newReserve instanceof CampingReserve && countCampingReserves < maxCampingCapacity) {
-            return true; // si
-        } else if ( (newReserve instanceof CabinReserve) && (countCabinReserves < maxCabinCapacity) ) {
-            return true; // si
-        } else if ( (newReserve instanceof ActivityReserve) && (countActivityReserves < maxActitvityCapacity) ) {
-            return true; // si
+            return true;
+        } else if (newReserve instanceof CabinReserve && countCabinReserves < maxCabinCapacity) {
+            return true;
+        } else if (newReserve instanceof ActivityReserve && countActivityReserves < maxActitvityCapacity) {
+            return true;
         }
-        return false; // no
+        return false;
     }
 
     // Getters and setters
-    public ArrayList<Reserve> getReserveList() {
-        return reserveList;
+    public HashMap<Client, ArrayList<Reserve>> getReserveList2() {
+        return reserveList2;
     }
 
-    public void setReserveList(ArrayList<Reserve> reserveList) {
-        this.reserveList = reserveList;
+    public void setReserveList2(HashMap<Client, ArrayList<Reserve>> reserveList2) {
+        this.reserveList2 = reserveList2;
     }
 
     public int getMaxCampingCapacity() {
@@ -115,11 +149,11 @@ public class Park {
         this.maxCabinCapacity = maxCabinCapacity;
     }
 
-    public int getMaxActitvityCapacity() {
+    public int getMaxActivityCapacity() {
         return maxActitvityCapacity;
     }
 
-    public void setMaxActitvityCapacity(int maxActitvityCapacity) {
-        this.maxActitvityCapacity = maxActitvityCapacity;
+    public void setMaxActivityCapacity(int maxActivityCapacity) {
+        this.maxActitvityCapacity = maxActivityCapacity;
     }
 }
