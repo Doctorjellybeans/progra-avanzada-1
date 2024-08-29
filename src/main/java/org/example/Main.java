@@ -1,4 +1,8 @@
 package org.example;
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class Main {
@@ -7,6 +11,9 @@ public class Main {
         // Manejo de i/o
         Scanner scanner = new Scanner(System.in);
         ClientMap clientMap = new ClientMap();
+        Park park = new Park(10,25,15);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
 
         int choice;
 
@@ -91,15 +98,96 @@ public class Main {
                         switch (choice) {
                             case 1:
                                 System.out.println("Ingresar una reserva");
+                                System.out.print("Ingrese el id de la reserva: ");
+                                int reserveId = Integer.parseInt(scanner.nextLine());
+
+                                System.out.print("Ingrese el run del cliente que desea hacer la reserva: ");
+                                String clientId = scanner.nextLine().trim();
+                                Client client = clientMap.getClientMap().get(clientId);
+
+                                // Aseguramos el buen formato de la fecha
+                                LocalDate startDate = null;
+                                while (startDate == null) {
+                                    System.out.println("Ingrese la fecha de entrada (dd/mm/yyyy)");
+                                    String inputDate = scanner.nextLine();
+
+                                    try {
+                                        startDate = LocalDate.parse(inputDate, formatter);
+                                    } catch (DateTimeParseException e) {
+                                        System.out.println("Fecha invalida, por favor introduce el formato CORRECTO");
+                                    }
+                                }
+
+                                LocalDate endDate = null;
+                                while (endDate == null) {
+                                    System.out.println("Ingrese la fecha de salida (dd/mm/yyyy)");
+                                    String inputDate = scanner.nextLine();
+
+                                    try {
+                                        endDate = LocalDate.parse(inputDate,formatter);
+                                    } catch (DateTimeParseException e) {
+                                        System.out.println("Fecha invalida, por favor introduce el formato CORRECTO lol");
+                                    }
+                                }
+
+                                System.out.println("Seleccione el tipo de reserva");
+                                boolean flag = false;
+                                do {
+                                    System.out.println("=========================================");
+                                    System.out.println("      Seleccione el tipo de reserva"      );
+                                    System.out.println("=========================================");
+                                    System.out.println("    0. De Actividad"                      );
+                                    System.out.println("    1. De cabañas"                        );
+                                    System.out.println("    2. De campamentos"                    );
+                                    System.out.println("=========================================");
+                                    choice = Integer.parseInt(scanner.nextLine());
+
+                                    switch (choice) {
+                                        case 0:
+                                            System.out.print("Ingrese el nombre de la actividad: ");
+                                            String activityName = scanner.nextLine();
+                                            System.out.print("Ingrese la cantidad de personas: ");
+                                            int numPeople = Integer.parseInt(scanner.nextLine());
+
+                                            ActivityReserve activityReserve = new ActivityReserve(reserveId, client, startDate, endDate, activityName, numPeople);
+                                            park.addReserve(activityReserve);
+
+                                            flag = true;
+                                            break;
+
+                                        case 1:
+                                            System.out.println("Ingrese la cantidad de personas: ");
+                                            int numTent = Integer.parseInt(scanner.nextLine());
+
+                                            CampingReserve campingReserve = new CampingReserve(reserveId, client, startDate, endDate, numTent);
+                                            park.addReserve(campingReserve);
+
+                                            flag = true;
+                                            break;
+                                        case 2:
+                                            System.out.println("Ingrese la cantidad de personas a alojar");
+                                            int numPerson = Integer.parseInt(scanner.nextLine()); // numero de personas que van a alojarse
+
+                                            CabinReserve cabinReserve = new CabinReserve(reserveId, client, startDate, endDate, numPerson);
+                                            park.addReserve(cabinReserve);
+
+                                            flag = true;
+                                            break;
+                                    }
+                                } while (!flag);
+                                choice = 10; // reset del choice
                                 break;
                             case 2:
                                 System.out.println("Eliminar una reserva");
+                                park.cancelReserve(scanner);
                                 break;
                             case 3:
                                 System.out.println("Buscar una reserva");
+                                park.searchReserve(scanner);
                                 break;
                             case 4:
                                 System.out.println("Mostrar lista de reservas");
+                                park.showReserveList();
                                 break;
                             case 0:
                                 System.out.println("Saliendo....");
