@@ -6,6 +6,8 @@ public class Main {
 
         // Manejo de i/o
         Scanner scanner = new Scanner(System.in);
+        ClientMap clientMap = new ClientMap();
+
         int choice;
 
         do {
@@ -37,15 +39,29 @@ public class Main {
                         switch (choice) {
                             case 1:
                                 System.out.println("Ingresar a un cliente");
+                                System.out.print("Ingresar el run de el cliente: ");
+                                String run = scanner.nextLine();
+                                System.out.print("Ingrese nombre: ");
+                                String name = scanner.nextLine();
+                                System.out.print("Ingrese email: ");
+                                String email = scanner.nextLine();
+                                System.out.print("Ingrese telefono: ");
+                                String phoneNumber = scanner.nextLine();
+
+                                Client client = new Client(run, name, email, phoneNumber);
+                                clientMap.addClientToMap(client);
                                 break;
                             case 2:
                                 System.out.println("Eliminar a un cliente");
+                                clientMap.removeClientFromMap(scanner);
                                 break;
                             case 3:
                                 System.out.println("Buscar a un cliente");
+                                clientMap.searchForClientInMap(scanner);
                                 break;
                             case 4:
                                 System.out.println("Mostrar lista de clientes");
+                                clientMap.showClientMap();
                                 break;
                             case 0:
                                 System.out.println("Saliendo....");
