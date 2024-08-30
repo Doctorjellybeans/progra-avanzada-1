@@ -2,6 +2,8 @@ package org.example;
 
 import java.util.*;
 import java.time.LocalDate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Park {
 
@@ -53,7 +55,7 @@ public class Park {
         }
         System.out.println("Reserva cancelada con éxito!");
     }
-    
+
     public void searchReserve(Scanner scanner) {
         System.out.println("Ingrese la ID del cliente para buscar sus reservas:");
         String clientId = scanner.nextLine();
@@ -96,14 +98,74 @@ public class Park {
         }
     }
 
+    //Mostrar las reservas de camping
+    public void showCampingReserveList() {
+        for(Map.Entry<Client, ArrayList<Reserve>> entry : reserveList2.entrySet()) {
+            Client client = entry.getKey();
+            ArrayList<Reserve> reservas = entry.getValue();
+
+            //Acá se filtra para reservas de camping
+            List<Reserve> campingReserves = reservas.stream().filter(reserve -> reserve instanceof  CampingReserve).toList();
+
+            if(!campingReserves.isEmpty()) {
+                System.out.println("Reservas de camping para cliente "+client.getRun()+ "(" + client.getName() + ":");
+                for (Reserve reserve : campingReserves) {
+                    reserve.showDetails();
+                }
+            }
+            else {
+                System.out.println("No existen reservas para el camping");
+            }
+        }
+    }
+
+    //Mostrar las reservas de cabañas
+    public void showCabinReserveList() {
+        for(Map.Entry<Client, ArrayList<Reserve>> entry : reserveList2.entrySet()) {
+            Client client = entry.getKey();
+            ArrayList<Reserve> reservas = entry.getValue();
+
+            //Acá se filtra para reservas de cabañas
+            List<Reserve> campingReserves = reservas.stream().filter(reserve -> reserve instanceof  CabinReserve).toList();
+
+            if(!campingReserves.isEmpty()) {
+                System.out.println("Reservas de cabaña para cliente "+client.getRun()+ "(" + client.getName() + ":");
+                for (Reserve reserve : campingReserves) {
+                    reserve.showDetails();
+                }
+            }
+            else {
+                System.out.println("No existen reservas para cabañas");
+            }
+        }
+    }
+
+    //Mostrar las reservas de actividades
+    public void showActivityReserveList() {
+        for(Map.Entry<Client, ArrayList<Reserve>> entry : reserveList2.entrySet()) {
+            Client client = entry.getKey();
+            ArrayList<Reserve> reservas = entry.getValue();
+
+            //Acá se filtra para reservas de cabañas
+            List<Reserve> campingReserves = reservas.stream().filter(reserve -> reserve instanceof  ActivityReserve).toList();
+
+            if(!campingReserves.isEmpty()) {
+                System.out.println("Reservas de actividades para cliente "+client.getRun()+ "(" + client.getName() + ":");
+                for (Reserve reserve : campingReserves) {
+                    reserve.showDetails();
+                }
+            }
+            else {
+                System.out.println("No existen reservas para actividades");
+            }
+        }
+    }
+
     // Verificar si se alcanzo la capacidad maxima
     public boolean isFull(Reserve newReserve) {
 
         // Contar reservas de cada tipo
-        long countCampingReserves = reserveList2.values().stream()
-                .flatMap(ArrayList::stream)
-                .filter(reserve -> reserve instanceof CampingReserve)
-                .count();
+        long countCampingReserves = reserveList2.values().stream().flatMap(ArrayList::stream).filter(reserve -> reserve instanceof CampingReserve).count();
         long countActivityReserves = reserveList2.values().stream()
                 .flatMap(ArrayList::stream)
                 .filter(reserve -> reserve instanceof ActivityReserve)

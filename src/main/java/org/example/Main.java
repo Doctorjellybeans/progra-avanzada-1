@@ -13,7 +13,7 @@ public class Main {
         ClientMap clientMap = new ClientMap();
         Park park = new Park(10,25,15);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
+        Fee fee = new Fee(20.0, 100.0, 15.0);
 
         int choice;
 
@@ -215,13 +215,13 @@ public class Main {
 
                         switch (choice) {
                             case 1:
-                                System.out.println("Consultar tarifas en cabañas");
+                                fee.campingFee();
                                 break;
                             case 2:
-                                System.out.println("Consultar tarifas en camping");
+                                fee.cabinFee();
                                 break;
                             case 3:
-                                System.out.println("Consultar tarifas en actividades");
+                                fee.activityFee();
                                 break;
                             case 0:
                                 System.out.println("Saliendo....");
@@ -249,13 +249,13 @@ public class Main {
 
                         switch (choice) {
                             case 1:
-                                System.out.println("Consultar clientes en cabañas");
+                                park.showCabinReserveList();
                                 break;
                             case 2:
-                                System.out.println("Consultar clientes en camping");
+                                park.showCampingReserveList();
                                 break;
                             case 3:
-                                System.out.println("Consultar clientes en actividades");
+                                park.showActivityReserveList();
                                 break;
                             case 0:
                                 System.out.println("Saliendo....");
