@@ -38,14 +38,33 @@ public class Fee {
         this.campingFeePerNight = newFee;
     }
 
+    public void updateCampingFee(int percentajeOfIncrease)
+    {
+        double actualFee = this.campingFeePerNight;
+        actualFee *= percentajeOfIncrease;
+        this.campingFeePerNight = (actualFee/100);
+    }
+
     // Actualizar la tarifa de las cabañas
     public void updateCabinFee(double newFee) {
         this.cabinFeePerNight = newFee;
+    }
+    public void updateCabinFee(int percentajeOfIncrease)
+    {
+        double actualFee = this.cabinFeePerNight;
+        actualFee *= percentajeOfIncrease;
+        this.cabinFeePerNight = (actualFee/100);
     }
 
     // Actualizar la tarifa de las actividades
     public void updateActivityFee(double newFee) {
         this.activityFeePerPerson = newFee;
+    }
+    public void updateActivityFee(int percentajeOfIncrease)
+    {
+        double actualFee = this.activityFeePerPerson;
+        actualFee *= percentajeOfIncrease;
+        this.activityFeePerPerson = (actualFee/100);
     }
 
 

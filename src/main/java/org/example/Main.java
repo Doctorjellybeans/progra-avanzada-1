@@ -27,7 +27,8 @@ public class Main {
         CampingReserve reserve2 = new CampingReserve(456, client2, LocalDate.now(), LocalDate.now(), 3);
         park.addReserve(client2, reserve2);
         CabinReserve reserve3 = new CabinReserve(789, client3, LocalDate.now(), LocalDate.now(), 3);
-        park.addReserve(client3, reserve3);
+        ActivityReserve reserve4 = new ActivityReserve( 147, client3, LocalDate.now(), LocalDate.now(), "Pesca", 3);
+        park.addReserve(client3, reserve3, reserve4);
 
         int choice;
 
@@ -102,9 +103,10 @@ public class Main {
                         System.out.println("       Administrador de reservas"         );
                         System.out.println("=========================================");
                         System.out.println(" 1. Ingresar una reserva"                 );
-                        System.out.println(" 2. Eliminar una reserva"                 );
-                        System.out.println(" 3. Buscar reserva por id de un cliente"  );
-                        System.out.println(" 4. Mostrar lista de reservas"            );
+                        System.out.println(" 2. Ingresar una reserva doble"           );
+                        System.out.println(" 3. Eliminar una reserva"                 );
+                        System.out.println(" 4. Buscar reserva por id de un cliente"  );
+                        System.out.println(" 5. Mostrar lista de reservas"            );
                         System.out.println(" 0. Salir"                                );
                         System.out.println("=========================================");
                         choice = Integer.parseInt(scanner.nextLine());
@@ -191,15 +193,15 @@ public class Main {
                                 } while (!flag);
                                 choice = 10; // reset del choice
                                 break;
-                            case 2:
+                            case 3:
                                 System.out.println("Eliminar una reserva");
                                 park.cancelReserve(scanner);
                                 break;
-                            case 3:
+                            case 4:
                                 System.out.println("Buscar una reserva");
                                 park.searchReserve(scanner);
                                 break;
-                            case 4:
+                            case 5:
                                 System.out.println("Mostrar lista de reservas");
                                 park.showReserveList();
                                 break;

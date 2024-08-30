@@ -40,6 +40,24 @@ public class Park {
         }
     }
 
+    public void addReserve(Client client, Reserve reserve, Reserve reserve2 ) {
+        ArrayList<Reserve> reservesOfClient = reserveList2.get(client);
+        if (reservesOfClient == null) {
+            reservesOfClient = new ArrayList<>();
+            reserveList2.put(client,reservesOfClient);
+        }
+
+        if (this.isFull(reserve)) {
+            reservesOfClient.add(reserve);
+            reservesOfClient.add(reserve2);
+            System.out.println("Reservas alcanzadas exitosamente");
+        }
+        else {
+            System.out.println("Capacidad maxima alcanzada para el tipo de reserva");
+        }
+
+    }
+
     // Cancela una reserva existente
     public void cancelReserve(Scanner scanner) {
         System.out.println("Ingrese la id de la reserva que desea cancelar");
