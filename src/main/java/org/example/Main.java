@@ -15,6 +15,20 @@ public class Main {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         Fee fee = new Fee(20.0, 100.0, 15.0);
 
+        //Datos iniciales
+        Client client1 = new Client("19654237-5", "Pedro Gonzales", "Pedro@mail.com", "+56978451263");
+        clientMap.addClientToMap(client1);
+        Client client2 = new Client("21258147-4", "Valentina Moreno", "Valentina@mail.com", "+56912365874");
+        clientMap.addClientToMap(client2);
+        Client client3 = new Client("20149751-k","Claudio Cubillos","Cubillos@mail.com","+56974258961");
+        clientMap.addClientToMap(client3);
+        ActivityReserve reserve1 = new ActivityReserve(123,client1,LocalDate.now(),LocalDate.now(),"Treking",4);
+        park.addReserve(client1, reserve1);
+        CampingReserve reserve2 = new CampingReserve(456, client2, LocalDate.now(), LocalDate.now(), 3);
+        park.addReserve(client2, reserve2);
+        CabinReserve reserve3 = new CabinReserve(789, client3, LocalDate.now(), LocalDate.now(), 3);
+        park.addReserve(client3, reserve3);
+
         int choice;
 
         do {
