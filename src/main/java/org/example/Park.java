@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -104,6 +105,48 @@ public class Park {
             }
         }    }
 
+    //Busqueda filtrada por tipo de reserva
+    public void filteredSearch(Scanner scanner){
+        System.out.println("=========================================");
+        System.out.println("1. Actividad");
+        System.out.println("2. Cabaña");
+        System.out.println("3. Campamento");
+        System.out.println("Seleccione el tipo de reserva que desea buscar:");
+        System.out.println("=========================================");
+        int opcion = Integer.parseInt(scanner.nextLine());
+        
+        Class<?> reserveFilter;
+        switch(opcion){
+            case 1:
+                reserveFilter = ActivityReserve.class;
+                break;
+            case 2:
+                reserveFilter = CabinReserve.class;
+                break;
+            case 3:
+                reserveFilter = CampingReserve.class;
+                break;
+            default:
+                System.out.println("Opcion invalida");
+                return;
+        }
+        
+        boolean found = false;
+        for(Client client : reserveList2.keySet()){
+            for(Reserve reserve : reserveList2.get(client)){
+                if(reserveFilter.isInstance(reserve)){
+                    System.out.println("Reservas encontradas para el cliente. "+ client.getName());
+                    reserve.showDetails();
+                    found = true;
+                }
+            }
+        }
+        
+        if (!found){
+            System.out.println("No se encontraron reservas del tipo seleccionado");
+        }
+    }
+    
     // Mostrar las reservas ingresadas
     public void showReserveList() {
         for (Map.Entry<Client, ArrayList<Reserve>> entry : reserveList2.entrySet()) {
@@ -204,6 +247,71 @@ public class Park {
         return false;
     }
 
+    
+    // Edicion de una reserva ya hecha
+    public void editReserve(Scanner scanner){
+        System.out.println("Ingrese el ID de la reserva que quiere editar");
+        int reserveId = Integer.parseInt(scanner.nextLine());
+        
+        //Se busca la reserva ingresada
+        Reserve actualReserve = null;
+        for (Reserve reserva : this.reserveList){
+            if(reserva.getReserveId() == reserveId){
+                actualReserve = reserva;
+                break;
+            }
+        }
+        
+        if(actualReserve != null)
+        {
+            System.out.println("Reserva encontrada");
+            actualReserve.showDetails();
+            
+            System.out.println("=========================================");
+            System.out.println("Que desea editar?");
+            System.out.println("1. Fecha de entrada");
+            System.out.println("2. Fecha de salida");
+            System.out.println("3. Número de personas o carpas");
+            System.out.println("=========================================");
+            int opcion = Integer.parseInt(scanner.nextLine());
+            
+            switch(opcion){
+                case 1:
+                    System.out.print("Ingrese la nueva fecha de inicio (dd/MM/yyyy): ");
+                    String newStartDate = scanner.nextLine();
+                    actualReserve.setStartDate(LocalDate.parse(newStartDate, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+                    break;
+                case 2:
+                    System.out.print("Ingrese la nueva fecha de término (dd/MM/yyyy): ");
+                    String newEndDate = scanner.nextLine();
+                    actualReserve.setEndDate(LocalDate.parse(newEndDate, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+                    break;
+
+                case 3:
+                    int newQuantity;
+                    if(actualReserve instanceof ActivityReserve){
+                        System.out.println("Ingrese la nueva cantidad de personas en la actividad");
+                        newQuantity = Integer.parseInt(scanner.nextLine());
+                        ((ActivityReserve) actualReserve).setNumPeople(newQuantity);
+                    }else if(actualReserve instanceof CampingReserve){
+                        System.out.println("Ingrese la nueva cantidad de carpas en el camping");
+                        newQuantity = Integer.parseInt(scanner.nextLine());
+                        ((CampingReserve) actualReserve).setNumTent(newQuantity);
+                    }else if(actualReserve instanceof CabinReserve){
+                        System.out.println("Ingrese la nueva cantidad de personas en la cabaña");
+                        newQuantity = Integer.parseInt(scanner.nextLine());
+                        ((CabinReserve) actualReserve).setNumPerson(newQuantity);
+                    }
+                    break;
+                default:
+                    System.out.println("Opcion Invalida");
+                    break;
+            }
+            System.out.println("Reserva editada exitosamente");
+        } else{
+            System.out.println("Reserva no encontrada");
+        }
+    }
     // Getters and setters
     public HashMap<Client, ArrayList<Reserve>> getReserveList2() {
         return reserveList2;
