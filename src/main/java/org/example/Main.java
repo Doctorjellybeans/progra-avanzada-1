@@ -1,9 +1,13 @@
 package org.example;
+
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +18,11 @@ public class Main {
         Park park = new Park(10,25,15);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         Fee fee = new Fee(20.0, 100.0, 15.0);
+        
+        // Se crea el JFrame principal para la ventana emergente
+        JFrame mainFrame = new JFrame("Sistema gestor de reservas");
+        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainFrame.setSize(800, 600);
 
         //Datos iniciales
         Client client1 = new Client("19654237-5", "Pedro Gonzales", "Pedro@mail.com", "+56978451263");
