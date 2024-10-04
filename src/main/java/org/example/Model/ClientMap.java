@@ -1,8 +1,12 @@
-package org.example;
+package org.example.Model;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
 
 public class ClientMap {
     // Atributos
@@ -77,7 +81,12 @@ public class ClientMap {
             client.showClientInfo(); // Mostrar la información del cliente en la consola
         }
     }
-
+    
+    //Metodo para obtener todos los clientes
+    public List<Client> getAllClients() {
+        return new ArrayList<>(clientMap.values()); // Devuelve una lista de todos los valores (clientes)
+    }
+    
     // Getters and setters
     public HashMap<String, Client> getClientMap() {
         return clientMap;
