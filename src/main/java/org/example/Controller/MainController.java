@@ -8,14 +8,14 @@ import org.example.View.*;
 
 public class MainController {
 
-    private Window mainView;
+    private MenuView mainView;
     private ClientMap clientMap;
     private Park park;
     private Fee fee;
     private DataSaver dataSaver;
     private String filePath;
 
-    public MainController(Window mainView, ClientMap clientMap, Park park, Fee fee, String path) {
+    public MainController(MenuView mainView, ClientMap clientMap, Park park, Fee fee, String path) {
         this.mainView = mainView;
         this.clientMap = clientMap;
         this.park = park;

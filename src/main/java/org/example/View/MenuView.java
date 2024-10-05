@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Window extends JFrame {
+public class MenuView extends JFrame {
 
     private JButton clientButton;
     private JButton reserveButton;
@@ -12,7 +12,7 @@ public class Window extends JFrame {
     private JButton parkButton;
     private JButton exitButton;
 
-    public Window() {
+    public MenuView() {
         // Configuración de la ventana
         setTitle("Sistema de Administración");
         setSize(400, 400);
