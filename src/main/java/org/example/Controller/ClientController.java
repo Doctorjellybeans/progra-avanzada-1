@@ -4,7 +4,8 @@
  */
 package org.example.Controller;
 
-import org.example.View.ClientRelated.ClientView;
+import org.example.View.ReserveRelated.SearchReserveFilterView;
+import org.example.View.ClientRelated.*;
 
 /**
  *
@@ -17,6 +18,8 @@ public class ClientController {
     // Constructor
     public ClientController(ClientView clienView) {
         this.clientView = clienView;
+        
+        // client view
         this.clientView.getClientButtonAdd().addActionListener(e -> addClient());
         this.clientView.getClientButtonRemove().addActionListener(e -> removeClient());
         this.clientView.getClientButtonSearch().addActionListener(e -> searchClient());
@@ -27,6 +30,10 @@ public class ClientController {
     
     // Acciones de cada JButton en Vista de clientes
     private void addClient() {
+        SearchReserveFilterView addClientView = new SearchReserveFilterView();
+        addClientView.setVisible(true);
+        
+        // En caso de presionar boton de regresar cerrar
         
     }
     
