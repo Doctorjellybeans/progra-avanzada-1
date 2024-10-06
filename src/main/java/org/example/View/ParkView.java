@@ -4,6 +4,8 @@
  */
 package org.example.View;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author negas
@@ -78,7 +80,23 @@ public class ParkView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    // Getters para botones
+    public JButton getjButton1() {
+        return jButton1;
+    }
 
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public JButton getjButton3() {
+        return jButton3;
+    }
+
+    public JButton getjButton4() {
+        return jButton4;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
