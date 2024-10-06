@@ -2,10 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package org.example.View;
+package org.example.View.ClientRelated;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -13,11 +14,10 @@ import javax.swing.JLabel;
  */
 public class ClientView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ClientView
-     */
     public ClientView() {
-        initComponents();
+        
+        
+        initComponents();        
     }
 
     /**
@@ -93,6 +93,8 @@ public class ClientView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
+    // Metodos adicionales
+   
     // Getters para botones
     public JButton getClientButtonAdd() {
         return clientButtonAdd;
@@ -113,6 +115,8 @@ public class ClientView extends javax.swing.JFrame {
     public JButton getClientButtonShowList() {
         return clientButtonShowList;
     }
+    
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton clientButtonAdd;

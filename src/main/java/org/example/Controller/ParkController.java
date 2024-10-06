@@ -4,7 +4,7 @@
  */
 package org.example.Controller;
 
-import org.example.View.ParkView;
+import org.example.View.ParkRelated.ParkView;
 
 public class ParkController {
     // Atributos
@@ -36,6 +36,6 @@ public class ParkController {
     }
     
     private void returnToMainMenu() {
-    
+        parkView.dispose();
     }
 }

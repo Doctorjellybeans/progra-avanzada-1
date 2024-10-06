@@ -4,7 +4,7 @@
  */
 package org.example.Controller;
 
-import org.example.View.FeeView;
+import org.example.View.FeeRelated.FeeView;
 
 public class FeeController {
     // Atributos
@@ -36,6 +36,6 @@ public class FeeController {
     }
     
     private void returnToMainMenu() {
-    
+        feeView.dispose();
     }
 }

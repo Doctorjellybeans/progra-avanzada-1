@@ -4,7 +4,7 @@
  */
 package org.example.Controller;
 
-import org.example.View.ClientView;
+import org.example.View.ClientRelated.ClientView;
 
 /**
  *
@@ -19,9 +19,9 @@ public class ClientController {
         this.clientView = clienView;
         this.clientView.getClientButtonAdd().addActionListener(e -> addClient());
         this.clientView.getClientButtonRemove().addActionListener(e -> removeClient());
-        this.clientView.getClientButtonReturn().addActionListener(e -> returnToMainMenu());
         this.clientView.getClientButtonSearch().addActionListener(e -> searchClient());
         this.clientView.getClientButtonShowList().addActionListener(e -> showClientList());
+        this.clientView.getClientButtonReturn().addActionListener(e -> returnToMainMenu());
     }
     
     
@@ -34,16 +34,16 @@ public class ClientController {
     
     }
     
-    private void returnToMainMenu() {
-    
-    }
-    
     private void searchClient() {
     
     }
     
     private void showClientList() {
     
+    }
+    
+    private void returnToMainMenu() {
+        clientView.dispose();
     }
     
 }

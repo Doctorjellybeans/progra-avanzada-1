@@ -4,7 +4,7 @@
  */
 package org.example.Controller;
 
-import org.example.View.ReserveView;
+import org.example.View.ReserveRelated.ReserveView;
 
 public class ReserveController {
     // Atributos
@@ -52,6 +52,6 @@ public class ReserveController {
     }
     
     public void returnToMainMenu() {
-    
+        reserveView.dispose();
     }
 }
