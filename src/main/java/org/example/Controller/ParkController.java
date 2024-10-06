@@ -29,18 +29,32 @@ public class ParkController {
     
     // Acciones de los JButtons en la vista
     private void clientsInActivities() {
-        
+        List<Reserve> reserveList = park.showActivityReserveList();
+        if (reserveList.isEmpty()) {
+            parkView.showErrorMessage("No hay clientes con reservas en los campings");
+        } else {
+            parkView.showCampingClients(reserveList);
+        }
         
     }
     
     private void clientsInCabin() {
-        
+        List<Reserve> reserveList = park.showCabinReserveList();
+        if (reserveList.isEmpty()) {
+            parkView.showErrorMessage("No hay clientes con reservas en los campings");
+        } else {
+            parkView.showCampingClients(reserveList);
+        }
     }
     
     private void clientsInCamping() {
         List<Reserve> reserveList = park.showCampingReserveList();
-        String[] List = (String[]) reserveList.toArray();
-        parkView.showCampingClients(List);
+        if (reserveList.isEmpty()) {
+            parkView.showErrorMessage("No hay clientes con reservas en los campings");
+        } else {
+            parkView.showCampingClients(reserveList);
+        }
+        
     }
     
     private void returnToMainMenu() {

@@ -176,45 +176,29 @@ public class Park{
     }
 
     //Mostrar las reservas de cabañas
-    public void showCabinReserveList() {
+    public List<Reserve> showCabinReserveList() {
+        List<Reserve> cabinReserves = null;
         for(Map.Entry<Client, ArrayList<Reserve>> entry : reserveList2.entrySet()) {
             Client client = entry.getKey();
             ArrayList<Reserve> reservas = entry.getValue();
 
             //Acá se filtra para reservas de cabañas
-            List<Reserve> campingReserves = reservas.stream().filter(reserve -> reserve instanceof  CabinReserve).toList();
-
-            if(!campingReserves.isEmpty()) {
-                System.out.println("Reservas de cabaña para cliente "+client.getRun()+ "(" + client.getName() + ":");
-                for (Reserve reserve : campingReserves) {
-                    reserve.showDetails();
-                }
-            }
-            else {
-                System.out.println("No existen reservas para cabañas");
-            }
+            cabinReserves = reservas.stream().filter(reserve -> reserve instanceof  CabinReserve).toList();      
         }
+        return cabinReserves;
     }
 
     //Mostrar las reservas de actividades
-    public void showActivityReserveList() {
+    public List<Reserve> showActivityReserveList() {
+        List<Reserve> activityReserves = null;
         for(Map.Entry<Client, ArrayList<Reserve>> entry : reserveList2.entrySet()) {
             Client client = entry.getKey();
             ArrayList<Reserve> reservas = entry.getValue();
 
             //Acá se filtra para reservas de cabañas
-            List<Reserve> campingReserves = reservas.stream().filter(reserve -> reserve instanceof  ActivityReserve).toList();
-
-            if(!campingReserves.isEmpty()) {
-                System.out.println("Reservas de actividades para cliente "+client.getRun()+ "(" + client.getName() + ":");
-                for (Reserve reserve : campingReserves) {
-                    reserve.showDetails();
-                }
-            }
-            else {
-                System.out.println("No existen reservas para actividades");
-            }
+            activityReserves = reservas.stream().filter(reserve -> reserve instanceof  ActivityReserve).toList(); 
         }
+        return activityReserves;
     }
 
     // Verificar si se alcanzo la capacidad maxima

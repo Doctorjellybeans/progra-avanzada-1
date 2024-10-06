@@ -95,24 +95,48 @@ public class ParkView extends javax.swing.JFrame {
     }//GEN-LAST:event_parkButtonClientsInCabinActionPerformed
     
     //Metodos
-    public void showCabinClients(){
+    public void showCabinClients(List<Reserve> list){
+        StringBuilder reserveList = new StringBuilder();
+        reserveList.append("Lista de clientes en cabañas: \n");
         
+        for( Reserve reserve : list){
+            Client actualClient = reserve.getClient();
+            reserveList.append(reserve.getReserveId()).append(" \n ").append("      ")
+                    .append(actualClient.getName()).append("--").append(actualClient.getRun());
+        }
+    
+        javax.swing.JOptionPane.showMessageDialog(null, reserveList.toString(), "Clientes en cabañas", javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }
     
-    public void showActivityClients(){
+    public void showActivityClients(List<Reserve> list){
+        StringBuilder reserveList = new StringBuilder();
+        reserveList.append("Lista de clientes en actividades: \n");
         
+        for( Reserve reserve : list){
+            Client actualClient = reserve.getClient();
+            reserveList.append(reserve.getReserveId()).append(" \n ").append("      ")
+                    .append(actualClient.getName()).append("--").append(actualClient.getRun());
+        }
+    
+        javax.swing.JOptionPane.showMessageDialog(null, reserveList.toString(), "Clientes en actividades", javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }
     
-    public void showCampingClients(String[] reserveList){
+    public void showCampingClients(List<Reserve> list){
+        StringBuilder reserveList = new StringBuilder();
+        reserveList.append("Lista de clientes en camping: \n");
         
-        
-        
-        JList<String> clientList = new JList<>(reserveList);
-        
-        JScrollPane scrollPane = new JScrollPane(clientList);
-        JOptionPane.showMessageDialog(this, scrollPane, "Clientes en la cabaña", JOptionPane.INFORMATION_MESSAGE);
+        for( Reserve reserve : list){
+            Client actualClient = reserve.getClient();
+            reserveList.append(reserve.getReserveId()).append(" \n ").append("      ")
+                    .append(actualClient.getName()).append("--").append(actualClient.getRun());
+        }
+    
+        javax.swing.JOptionPane.showMessageDialog(null, reserveList.toString(), "Clientes en campings", javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }
     
+        public void showErrorMessage(String message) {
+        javax.swing.JOptionPane.showMessageDialog(this, message, "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
     // Getters para botones
     public JButton getParkButtonClientsInActivities() {
         return parkButtonClientsInActivities;
