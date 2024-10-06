@@ -29,43 +29,53 @@ public class ReserveView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        reserveTitle = new javax.swing.JLabel();
+        reserveButtonAdd = new javax.swing.JButton();
+        reserveButtonRemove = new javax.swing.JButton();
+        reserveButtonSearchById = new javax.swing.JButton();
+        reserveButtonSearchByFilter = new javax.swing.JButton();
+        reserveButtonShowList = new javax.swing.JButton();
+        reserveEdit = new javax.swing.JButton();
+        reserveButtonReturn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
-        jLabel1.setText("Gestion de Reservas");
+        reserveTitle.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
+        reserveTitle.setText("Gestion de Reservas");
 
-        jButton1.setText("Agregar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        reserveButtonAdd.setText("Agregar");
+        reserveButtonAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                reserveButtonAddActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Eliminar");
+        reserveButtonRemove.setText("Eliminar");
 
-        jButton3.setText("Buscar");
-
-        jButton4.setText("Buscar por filtro");
-
-        jButton5.setText("Lista de Reservas");
-
-        jButton6.setText("Editar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        reserveButtonSearchById.setText("Buscar por id");
+        reserveButtonSearchById.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                reserveButtonSearchByIdActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Salir");
+        reserveButtonSearchByFilter.setText("Buscar por filtro");
+
+        reserveButtonShowList.setText("Lista Reservas");
+        reserveButtonShowList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reserveButtonShowListActionPerformed(evt);
+            }
+        });
+
+        reserveEdit.setText("Editar");
+        reserveEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reserveEditActionPerformed(evt);
+            }
+        });
+
+        reserveButtonReturn.setText("Salir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,103 +83,111 @@ public class ReserveView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton7))
+                .addComponent(reserveButtonReturn))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(70, 70, 70)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(reserveTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(reserveButtonAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(reserveButtonRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(reserveButtonSearchById, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(reserveButtonSearchByFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(reserveButtonShowList, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(reserveEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
+                .addComponent(reserveTitle)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(reserveButtonAdd)
+                    .addComponent(reserveButtonRemove))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(reserveButtonSearchById)
+                    .addComponent(reserveButtonSearchByFilter))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
-                    .addComponent(jButton5))
+                    .addComponent(reserveEdit)
+                    .addComponent(reserveButtonShowList))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addComponent(jButton7))
+                .addComponent(reserveButtonReturn))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void reserveEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveEditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_reserveEditActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void reserveButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveButtonAddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_reserveButtonAddActionPerformed
+
+    private void reserveButtonSearchByIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveButtonSearchByIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reserveButtonSearchByIdActionPerformed
+
+    private void reserveButtonShowListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveButtonShowListActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reserveButtonShowListActionPerformed
     
     // Getters para botones
     public JButton getjButton1() {
-        return jButton1;
+        return reserveButtonAdd;
     }
 
     public JButton getjButton2() {
-        return jButton2;
+        return reserveButtonRemove;
     }
 
     public JButton getjButton3() {
-        return jButton3;
+        return reserveButtonSearchById;
     }
 
     public JButton getjButton4() {
-        return jButton4;
+        return reserveButtonSearchByFilter;
     }
 
     public JButton getjButton5() {
-        return jButton5;
+        return reserveButtonShowList;
     }
 
     public JButton getjButton6() {
-        return jButton6;
+        return reserveEdit;
     }
 
     public JButton getjButton7() {
-        return jButton7;
+        return reserveButtonReturn;
     }
 
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton reserveButtonAdd;
+    private javax.swing.JButton reserveButtonRemove;
+    private javax.swing.JButton reserveButtonReturn;
+    private javax.swing.JButton reserveButtonSearchByFilter;
+    private javax.swing.JButton reserveButtonSearchById;
+    private javax.swing.JButton reserveButtonShowList;
+    private javax.swing.JButton reserveEdit;
+    private javax.swing.JLabel reserveTitle;
     // End of variables declaration//GEN-END:variables
 }

@@ -28,24 +28,24 @@ public class FeeView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        feeTitle = new javax.swing.JLabel();
+        feeButtonQueryCabin = new javax.swing.JButton();
+        feeButtonQueryCamping = new javax.swing.JButton();
+        feeButtonQueryActivities = new javax.swing.JButton();
+        feeButtonReturn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
-        jLabel1.setText("Consultar tarifas");
+        feeTitle.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
+        feeTitle.setText("Consultar tarifas");
 
-        jButton1.setText("Cabañas");
+        feeButtonQueryCabin.setText("Cabañas");
 
-        jButton2.setText("Campings");
+        feeButtonQueryCamping.setText("Campings");
 
-        jButton3.setText("Actividades");
+        feeButtonQueryActivities.setText("Actividades");
 
-        jButton4.setText("Salir");
+        feeButtonReturn.setText("Salir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,57 +56,57 @@ public class FeeView extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))
+                            .addComponent(feeButtonQueryCabin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(feeButtonQueryCamping, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 92, Short.MAX_VALUE))
                         .addGap(28, 28, 28)
-                        .addComponent(jButton3))
+                        .addComponent(feeButtonQueryActivities))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(49, 49, 49)
-                        .addComponent(jLabel1)))
+                        .addComponent(feeTitle)))
                 .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton4))
+                .addComponent(feeButtonReturn))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabel1)
+                .addComponent(feeTitle)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3))
+                    .addComponent(feeButtonQueryCabin)
+                    .addComponent(feeButtonQueryActivities))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(feeButtonQueryCamping)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(jButton4))
+                .addComponent(feeButtonReturn))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     // Getters para botones
     public JButton getjButton1() {
-        return jButton1;
+        return feeButtonQueryCabin;
     }
 
     public JButton getjButton2() {
-        return jButton2;
+        return feeButtonQueryCamping;
     }
 
     public JButton getjButton3() {
-        return jButton3;
+        return feeButtonQueryActivities;
     }
 
     public JButton getjButton4() {
-        return jButton4;
+        return feeButtonReturn;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton feeButtonQueryActivities;
+    private javax.swing.JButton feeButtonQueryCabin;
+    private javax.swing.JButton feeButtonQueryCamping;
+    private javax.swing.JButton feeButtonReturn;
+    private javax.swing.JLabel feeTitle;
     // End of variables declaration//GEN-END:variables
 }

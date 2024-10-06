@@ -28,27 +28,27 @@ public class ClientView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        clientTitle = new javax.swing.JLabel();
+        clientButtonAdd = new javax.swing.JButton();
+        clientButtonRemove = new javax.swing.JButton();
+        clientButtonSearch = new javax.swing.JButton();
+        clientButtonShowList = new javax.swing.JButton();
+        clientButtonReturn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Agregar");
+        clientTitle.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
+        clientTitle.setText("Gestion de clientes");
 
-        jButton2.setText("Eliminar");
+        clientButtonAdd.setText("Agregar");
 
-        jButton3.setText("Buscar");
+        clientButtonRemove.setText("Eliminar");
 
-        jButton4.setText("Lista de Clientes");
+        clientButtonSearch.setText("Buscar");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
-        jLabel1.setText("Gestion de clientes");
+        clientButtonShowList.setText("Lista de Clientes");
 
-        jButton5.setText("Salir");
+        clientButtonReturn.setText("Salir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,35 +58,35 @@ public class ClientView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jLabel1))
+                        .addComponent(clientTitle))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(clientButtonShowList, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(clientButtonSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(clientButtonAdd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                .addComponent(clientButtonRemove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(44, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton5))
+                .addComponent(clientButtonReturn))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel1)
+                .addComponent(clientTitle)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(clientButtonAdd)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(clientButtonRemove)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(clientButtonSearch)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(clientButtonShowList)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(jButton5))
+                .addComponent(clientButtonReturn))
         );
 
         pack();
@@ -94,31 +94,31 @@ public class ClientView extends javax.swing.JFrame {
     
     // Getters para botones
     public JButton getjButton1() {
-        return jButton1;
+        return clientButtonAdd;
     }
 
     public JButton getjButton2() {
-        return jButton2;
+        return clientButtonRemove;
     }
 
     public JButton getjButton3() {
-        return jButton3;
+        return clientButtonSearch;
     }
 
     public JButton getjButton4() {
-        return jButton4;
+        return clientButtonShowList;
     }
 
     public JButton getjButton5() {
-        return jButton5;
+        return clientButtonReturn;
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton clientButtonAdd;
+    private javax.swing.JButton clientButtonRemove;
+    private javax.swing.JButton clientButtonReturn;
+    private javax.swing.JButton clientButtonSearch;
+    private javax.swing.JButton clientButtonShowList;
+    private javax.swing.JLabel clientTitle;
     // End of variables declaration//GEN-END:variables
 }

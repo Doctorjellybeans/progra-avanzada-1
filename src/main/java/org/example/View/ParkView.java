@@ -28,81 +28,91 @@ public class ParkView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        parkTitle = new javax.swing.JLabel();
+        parkButtonClientsInCabin = new javax.swing.JButton();
+        parkButtonClientsInCamping = new javax.swing.JButton();
+        parkButtonClientsInActivities = new javax.swing.JButton();
+        parkButtonReturn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
-        jLabel1.setText("Administrador de parques");
+        parkTitle.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
+        parkTitle.setText("Administrador de parques");
 
-        jButton1.setText("Consultar clientes en cabañas");
+        parkButtonClientsInCabin.setText("Consultar clientes en cabañas");
+        parkButtonClientsInCabin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                parkButtonClientsInCabinActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Consultar clientes en campings");
+        parkButtonClientsInCamping.setText("Consultar clientes en campings");
 
-        jButton3.setText("Consultar clientes en actividades");
+        parkButtonClientsInActivities.setText("Consultar clientes en actividades");
 
-        jButton4.setText("Salir");
+        parkButtonReturn.setText("Salir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton4))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(parkButtonClientsInCabin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(parkButtonClientsInCamping, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(parkButtonClientsInActivities, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(8, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(parkButtonReturn, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(parkTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(parkTitle)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(parkButtonClientsInCabin)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(parkButtonClientsInCamping)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(parkButtonClientsInActivities)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4))
+                .addComponent(parkButtonReturn))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void parkButtonClientsInCabinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parkButtonClientsInCabinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_parkButtonClientsInCabinActionPerformed
     
     // Getters para botones
     public JButton getjButton1() {
-        return jButton1;
+        return parkButtonClientsInCabin;
     }
 
     public JButton getjButton2() {
-        return jButton2;
+        return parkButtonClientsInCamping;
     }
 
     public JButton getjButton3() {
-        return jButton3;
+        return parkButtonClientsInActivities;
     }
 
     public JButton getjButton4() {
-        return jButton4;
+        return parkButtonReturn;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton parkButtonClientsInActivities;
+    private javax.swing.JButton parkButtonClientsInCabin;
+    private javax.swing.JButton parkButtonClientsInCamping;
+    private javax.swing.JButton parkButtonReturn;
+    private javax.swing.JLabel parkTitle;
     // End of variables declaration//GEN-END:variables
 }
