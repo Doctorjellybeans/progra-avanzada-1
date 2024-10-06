@@ -38,6 +38,7 @@ public class MainController {
             // Lógica para gestionar clientes (aquí puedes abrir un nuevo JFrame, etc.)
             System.out.println("Gestionar clientes");
             ClientView client = new ClientView();
+            client.setLocationRelativeTo(null);
             client.setVisible(true);
         }
     }
@@ -49,6 +50,7 @@ public class MainController {
             // Lógica para gestionar reservas
             System.out.println("Gestionar reservas");
             ReserveView reserve = new ReserveView();
+            reserve.setLocationRelativeTo(null);
             reserve.setVisible(true);
         }
     }
@@ -60,6 +62,7 @@ public class MainController {
             // Lógica para gestionar tarifas
             System.out.println("Gestionar tarifas");
             FeeView fee = new FeeView();
+            fee.setLocationRelativeTo(null);
             fee.setVisible(true);
         }
     }
@@ -71,6 +74,7 @@ public class MainController {
             // Lógica para gestionar parque
             System.out.println("Gestionar parque");
             ParkView park = new ParkView();
+            park.setLocationRelativeTo(null);
             park.setVisible(true);
         }
     }
