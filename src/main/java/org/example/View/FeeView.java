@@ -86,19 +86,19 @@ public class FeeView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     // Getters para botones
-    public JButton getjButton1() {
-        return feeButtonQueryCabin;
-    }
-
-    public JButton getjButton2() {
-        return feeButtonQueryCamping;
-    }
-
-    public JButton getjButton3() {
+    public JButton getFeeButtonQueryActivities() {
         return feeButtonQueryActivities;
     }
 
-    public JButton getjButton4() {
+    public JButton getFeeButtonQueryCabin() {
+        return feeButtonQueryCabin;
+    }
+
+    public JButton getFeeButtonQueryCamping() {
+        return feeButtonQueryCamping;
+    }
+
+    public JButton getFeeButtonReturn() {
         return feeButtonReturn;
     }
 

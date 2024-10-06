@@ -6,11 +6,11 @@ import java.awt.event.*;
 
 public class MenuView extends JFrame {
 
-    private JButton clientButton;
-    private JButton reserveButton;
-    private JButton feeButton;
-    private JButton parkButton;
-    private JButton exitButton;
+    private JButton clientMenuButton;
+    private JButton reserveMenuButton;
+    private JButton feeMenuButton;
+    private JButton parkMenuButton;
+    private JButton exitMenuButton;
 
     public MenuView() {
         // Configuración de la ventana
@@ -20,18 +20,18 @@ public class MenuView extends JFrame {
         setLayout(new GridLayout(5, 1));
 
         // Crear botones
-        clientButton = new JButton("Administrar Clientes");
-        reserveButton = new JButton("Administrar Reservas");
-        feeButton = new JButton("Administrar Tarifas");
-        parkButton = new JButton("Administrar Parque");
-        exitButton = new JButton("Salir");
+        clientMenuButton = new JButton("Administrar Clientes");
+        reserveMenuButton = new JButton("Administrar Reservas");
+        feeMenuButton = new JButton("Administrar Tarifas");
+        parkMenuButton = new JButton("Administrar Parque");
+        exitMenuButton = new JButton("Salir");
 
         // Agregar botones al layout
-        add(clientButton);
-        add(reserveButton);
-        add(feeButton);
-        add(parkButton);
-        add(exitButton);
+        add(clientMenuButton);
+        add(reserveMenuButton);
+        add(feeMenuButton);
+        add(parkMenuButton);
+        add(exitMenuButton);
 
         // Hacer la ventana visible
         setVisible(true);
@@ -39,22 +39,22 @@ public class MenuView extends JFrame {
 
     // Métodos para asignar ActionListener a los botones
     public void setClientButtonListener(ActionListener listener) {
-        clientButton.addActionListener(listener);
+        clientMenuButton.addActionListener(listener);
     }
 
     public void setReserveButtonListener(ActionListener listener) {
-        reserveButton.addActionListener(listener);
+        reserveMenuButton.addActionListener(listener);
     }
 
     public void setFeeButtonListener(ActionListener listener) {
-        feeButton.addActionListener(listener);
+        feeMenuButton.addActionListener(listener);
     }
 
     public void setParkButtonListener(ActionListener listener) {
-        parkButton.addActionListener(listener);
+        parkMenuButton.addActionListener(listener);
     }
 
     public void setExitButtonListener(ActionListener listener) {
-        exitButton.addActionListener(listener);
+        exitMenuButton.addActionListener(listener);
     }
 }

@@ -92,19 +92,19 @@ public class ParkView extends javax.swing.JFrame {
     }//GEN-LAST:event_parkButtonClientsInCabinActionPerformed
     
     // Getters para botones
-    public JButton getjButton1() {
-        return parkButtonClientsInCabin;
-    }
-
-    public JButton getjButton2() {
-        return parkButtonClientsInCamping;
-    }
-
-    public JButton getjButton3() {
+    public JButton getParkButtonClientsInActivities() {
         return parkButtonClientsInActivities;
     }
 
-    public JButton getjButton4() {
+    public JButton getParkButtonClientsInCabin() {
+        return parkButtonClientsInCabin;
+    }
+
+    public JButton getParkButtonClientsInCamping() {
+        return parkButtonClientsInCamping;
+    }
+
+    public JButton getParkButtonReturn() {
         return parkButtonReturn;
     }
 

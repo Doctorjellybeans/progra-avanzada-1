@@ -5,6 +5,7 @@
 package org.example.View;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 /**
  *
@@ -93,24 +94,24 @@ public class ClientView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     // Getters para botones
-    public JButton getjButton1() {
+    public JButton getClientButtonAdd() {
         return clientButtonAdd;
     }
 
-    public JButton getjButton2() {
+    public JButton getClientButtonRemove() {
         return clientButtonRemove;
     }
 
-    public JButton getjButton3() {
+    public JButton getClientButtonReturn() {
+        return clientButtonReturn;
+    }
+
+    public JButton getClientButtonSearch() {
         return clientButtonSearch;
     }
 
-    public JButton getjButton4() {
+    public JButton getClientButtonShowList() {
         return clientButtonShowList;
-    }
-
-    public JButton getjButton5() {
-        return clientButtonReturn;
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

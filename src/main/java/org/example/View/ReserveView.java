@@ -35,7 +35,7 @@ public class ReserveView extends javax.swing.JFrame {
         reserveButtonSearchById = new javax.swing.JButton();
         reserveButtonSearchByFilter = new javax.swing.JButton();
         reserveButtonShowList = new javax.swing.JButton();
-        reserveEdit = new javax.swing.JButton();
+        reserveButtonEdit = new javax.swing.JButton();
         reserveButtonReturn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,10 +68,10 @@ public class ReserveView extends javax.swing.JFrame {
             }
         });
 
-        reserveEdit.setText("Editar");
-        reserveEdit.addActionListener(new java.awt.event.ActionListener() {
+        reserveButtonEdit.setText("Editar");
+        reserveButtonEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reserveEditActionPerformed(evt);
+                reserveButtonEditActionPerformed(evt);
             }
         });
 
@@ -106,7 +106,7 @@ public class ReserveView extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(reserveButtonShowList, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(reserveEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(reserveButtonEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -124,7 +124,7 @@ public class ReserveView extends javax.swing.JFrame {
                     .addComponent(reserveButtonSearchByFilter))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(reserveEdit)
+                    .addComponent(reserveButtonEdit)
                     .addComponent(reserveButtonShowList))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(reserveButtonReturn))
@@ -133,9 +133,9 @@ public class ReserveView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void reserveEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveEditActionPerformed
+    private void reserveButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveButtonEditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_reserveEditActionPerformed
+    }//GEN-LAST:event_reserveButtonEditActionPerformed
 
     private void reserveButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveButtonAddActionPerformed
         // TODO add your handling code here:
@@ -150,44 +150,44 @@ public class ReserveView extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveButtonShowListActionPerformed
     
     // Getters para botones
-    public JButton getjButton1() {
+    public JButton getReserveButtonAdd() {
         return reserveButtonAdd;
     }
 
-    public JButton getjButton2() {
+    public JButton getReserveButtonRemove() {
         return reserveButtonRemove;
     }
 
-    public JButton getjButton3() {
-        return reserveButtonSearchById;
+    public JButton getReserveButtonReturn() {
+        return reserveButtonReturn;
     }
 
-    public JButton getjButton4() {
+    public JButton getReserveButtonSearchByFilter() {
         return reserveButtonSearchByFilter;
     }
 
-    public JButton getjButton5() {
+    public JButton getReserveButtonSearchById() {
+        return reserveButtonSearchById;
+    }
+
+    public JButton getReserveButtonShowList() {
         return reserveButtonShowList;
     }
 
-    public JButton getjButton6() {
-        return reserveEdit;
-    }
-
-    public JButton getjButton7() {
-        return reserveButtonReturn;
+    public JButton getReserveButtonEdit() {
+        return reserveButtonEdit;
     }
 
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton reserveButtonAdd;
+    private javax.swing.JButton reserveButtonEdit;
     private javax.swing.JButton reserveButtonRemove;
     private javax.swing.JButton reserveButtonReturn;
     private javax.swing.JButton reserveButtonSearchByFilter;
     private javax.swing.JButton reserveButtonSearchById;
     private javax.swing.JButton reserveButtonShowList;
-    private javax.swing.JButton reserveEdit;
     private javax.swing.JLabel reserveTitle;
     // End of variables declaration//GEN-END:variables
 }
