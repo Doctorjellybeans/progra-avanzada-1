@@ -32,6 +32,11 @@ public class ClientMap {
             clientMap.put(client.getRun(), client);
         }
     }
+    
+    public Client removeClientFromMap(String id) {
+        return clientMap.remove(id);
+        
+    }
 
     public void removeClientFromMap(Scanner scanner) { // Pasar Scanner como argumento
         System.out.print("Ingrese el run del cliente que desea eliminar del sistema: ");
@@ -49,7 +54,15 @@ public class ClientMap {
             System.out.println("No se encontró ninguna línea de entrada.");
         }
     }
-
+    
+    public boolean searchForClientInMap(String id) {
+        return clientMap.containsKey(id);
+    }
+    
+    public Client getClientInMap(String id) {
+        return clientMap.get(id);
+    }
+    
     public Boolean searchForClientInMap(Scanner scanner) {
         System.out.println("#-------------------------- BUSCANDO ---------------------------#");
         System.out.print("Ingrese el run del cliente que desea buscar en el sistema: ");

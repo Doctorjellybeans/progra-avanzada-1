@@ -12,9 +12,10 @@ import javax.swing.JTextPane;
  * @author doctorjellybeans
  */
 public class AddClientView extends javax.swing.JFrame {
-
+    
     // COnstructor
     public AddClientView() {
+        
         initComponents();
     }
 
@@ -130,7 +131,11 @@ public class AddClientView extends javax.swing.JFrame {
     private void clientReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientReturnButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_clientReturnButtonActionPerformed
-
+    
+    // Metodos
+    public void showSuccessMessage(String message) {
+        javax.swing.JOptionPane.showMessageDialog(this, message, "Confirmación", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }
     
     // Getters para los botones y los paneles de texto
     public JButton getClientConfirmButton() {

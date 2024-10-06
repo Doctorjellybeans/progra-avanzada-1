@@ -37,7 +37,8 @@ public class MainController {
     
     public void openClientWindow() {
        ClientView clientView = new ClientView();
-       new ClientController(clientView);
+       ClientMap clientMapModel = new ClientMap();
+       new ClientController(clientView, clientMapModel);
        clientView.setLocationRelativeTo(null);
        clientView.setVisible(true);
        
