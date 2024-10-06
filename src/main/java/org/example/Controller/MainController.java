@@ -9,81 +9,41 @@ import org.example.View.*;
 public class MainController {
 
     private MenuView mainView;
-    private ClientMap clientMap;
-    private Park park;
-    private Fee fee;
-    private DataSaver dataSaver;
-    private String filePath;
 
-    public MainController(MenuView mainView, ClientMap clientMap, Park park, Fee fee, String path) {
-        this.mainView = mainView;
-        this.clientMap = clientMap;
-        this.park = park;
-        this.fee = fee;
+    public MainController(MenuView mainView, String path) {
+        //String filePath = path;
         
-        filePath = path;
-
-        // Asignar listeners a los botones
-        mainView.setClientButtonListener(new ClientButtonListener());
-        mainView.setReserveButtonListener(new ReserveButtonListener());
-        mainView.setFeeButtonListener(new FeeButtonListener());
-        mainView.setParkButtonListener(new ParkButtonListener());
-        mainView.setExitButtonListener(new ExitButtonListener());
+        // Asignar vista
+        this.mainView = mainView;
+        
+        // Asignar listeners a cada boton
+        this.mainView.getClientMenuButton().addActionListener(e -> openClientWindow());
+        this.mainView.getReserveMenuButton().addActionListener(e -> openReserveWindow());
+        this.mainView.getFeeMenuButton().addActionListener(e -> openFeeWindow());
+        this.mainView.getParkMenuButton().addActionListener(e -> openParkWindow());
+        this.mainView.getExitMenuButton().addActionListener(e -> exit());
+        
+        
     }
-
-    // Listener para el botón de "Administrar clientes"
-    class ClientButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // Lógica para gestionar clientes (aquí puedes abrir un nuevo JFrame, etc.)
-            System.out.println("Gestionar clientes");
-            ClientView client = new ClientView();
-            client.setLocationRelativeTo(null);
-            client.setVisible(true);
-        }
+    
+    public void openClientWindow() {
+        
     }
-
-    // Listener para el botón de "Administrar reservas"
-    class ReserveButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // Lógica para gestionar reservas
-            System.out.println("Gestionar reservas");
-            ReserveView reserve = new ReserveView();
-            reserve.setLocationRelativeTo(null);
-            reserve.setVisible(true);
-        }
+    
+    public void openReserveWindow() {
+    
     }
-
-    // Listener para el botón de "Administrar tarifas"
-    class FeeButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // Lógica para gestionar tarifas
-            System.out.println("Gestionar tarifas");
-            FeeView fee = new FeeView();
-            fee.setLocationRelativeTo(null);
-            fee.setVisible(true);
-        }
+    
+    public void openFeeWindow() {
+    
     }
-
-    // Listener para el botón de "Administrar parque"
-    class ParkButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // Lógica para gestionar parque
-            System.out.println("Gestionar parque");
-            ParkView park = new ParkView();
-            park.setLocationRelativeTo(null);
-            park.setVisible(true);
-        }
+    
+    public void openParkWindow() {
+        
     }
-
-    // Listener para el botón de "Salir"
-    class ExitButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            System.exit(0);
-        }
+    
+    public void exit() {
+    
     }
+    
 }

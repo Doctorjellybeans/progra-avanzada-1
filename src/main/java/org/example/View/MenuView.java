@@ -36,6 +36,28 @@ public class MenuView extends JFrame {
         // Hacer la ventana visible
         setVisible(true);
     }
+    
+    // Getters de botones ventana main
+    public JButton getClientMenuButton() {
+        return clientMenuButton;
+    }
+
+    public JButton getReserveMenuButton() {
+        return reserveMenuButton;
+    }
+
+    public JButton getFeeMenuButton() {
+        return feeMenuButton;
+    }
+
+    public JButton getParkMenuButton() {
+        return parkMenuButton;
+    }
+
+    public JButton getExitMenuButton() {
+        return exitMenuButton;
+    }
+    
 
     // Métodos para asignar ActionListener a los botones
     public void setClientButtonListener(ActionListener listener) {
