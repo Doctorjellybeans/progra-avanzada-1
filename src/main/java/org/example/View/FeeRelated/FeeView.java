@@ -4,7 +4,7 @@
  */
 package org.example.View.FeeRelated;
 
-import javax.swing.JButton;
+import javax.swing.*;
 
 /**
  *
@@ -12,9 +12,11 @@ import javax.swing.JButton;
  */
 public class FeeView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FeeView
-     */
+    JDialog activityFee = new JDialog();
+    JDialog cabinFee = new JDialog();
+    JDialog campingFee = new JDialog();
+    
+    
     public FeeView() {
         initComponents();
     }
@@ -40,6 +42,11 @@ public class FeeView extends javax.swing.JFrame {
         feeTitle.setText("Consultar tarifas");
 
         feeButtonQueryCabin.setText("Cabañas");
+        feeButtonQueryCabin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                feeButtonQueryCabinActionPerformed(evt);
+            }
+        });
 
         feeButtonQueryCamping.setText("Campings");
 
@@ -57,7 +64,7 @@ public class FeeView extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(feeButtonQueryCabin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(feeButtonQueryCamping, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 92, Short.MAX_VALUE))
+                            .addComponent(feeButtonQueryCamping, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))
                         .addGap(28, 28, 28)
                         .addComponent(feeButtonQueryActivities))
                     .addGroup(layout.createSequentialGroup()
@@ -85,6 +92,24 @@ public class FeeView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void feeButtonQueryCabinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feeButtonQueryCabinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_feeButtonQueryCabinActionPerformed
+    
+    // Métodos
+    public void showCabinFee(String message) {
+        javax.swing.JOptionPane.showMessageDialog(this, message, "Tarifa de cabañas", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public void showActivityFee(String message){
+        javax.swing.JOptionPane.showMessageDialog(this, message, "Tarifa de actividades",javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public void showCampingFee(String message){
+        javax.swing.JOptionPane.showMessageDialog(this, message, "Tarifa de campings",javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }
+
     // Getters para botones
     public JButton getFeeButtonQueryActivities() {
         return feeButtonQueryActivities;
@@ -102,6 +127,20 @@ public class FeeView extends javax.swing.JFrame {
         return feeButtonReturn;
     }
 
+    public JDialog getActivityFee() {
+        return activityFee;
+    }
+
+    public JDialog getCabinFee() {
+        return cabinFee;
+    }
+
+    public JDialog getCampingFee() {
+        return campingFee;
+    }
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton feeButtonQueryActivities;
     private javax.swing.JButton feeButtonQueryCabin;

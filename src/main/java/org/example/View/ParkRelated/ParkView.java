@@ -4,7 +4,10 @@
  */
 package org.example.View.ParkRelated;
 
-import javax.swing.JButton;
+import java.awt.Component;
+import java.util.List;
+import javax.swing.*;
+import org.example.Model.*;
 
 /**
  *
@@ -90,6 +93,25 @@ public class ParkView extends javax.swing.JFrame {
     private void parkButtonClientsInCabinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parkButtonClientsInCabinActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_parkButtonClientsInCabinActionPerformed
+    
+    //Metodos
+    public void showCabinClients(){
+        
+    }
+    
+    public void showActivityClients(){
+        
+    }
+    
+    public void showCampingClients(String[] reserveList){
+        
+        
+        
+        JList<String> clientList = new JList<>(reserveList);
+        
+        JScrollPane scrollPane = new JScrollPane(clientList);
+        JOptionPane.showMessageDialog(this, scrollPane, "Clientes en la cabaña", JOptionPane.INFORMATION_MESSAGE);
+    }
     
     // Getters para botones
     public JButton getParkButtonClientsInActivities() {

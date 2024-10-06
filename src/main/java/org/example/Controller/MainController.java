@@ -16,11 +16,13 @@ public class MainController {
 
     private MenuView mainView;
     private Fee actualFee;
+    private Park actualPark;
 
-    public MainController(MenuView mainView, String path, Scanner scanner, Park park, DateTimeFormatter formatter, Fee fee) {
+    public MainController(MenuView mainView, String path, Park park, DateTimeFormatter formatter, Fee fee) {
         //String filePath = path;
         //Se leen los valores iniciales del codigo
         this.actualFee = fee;
+        this.actualPark = park;
         
         // Asignar vista
         this.mainView = mainView;
@@ -60,7 +62,7 @@ public class MainController {
     
     public void openParkWindow() {
        ParkView parkView = new ParkView();
-       new ParkController(parkView);
+       new ParkController(parkView, actualPark);
        parkView.setLocationRelativeTo(null);
        parkView.setVisible(true);
     }

@@ -162,24 +162,17 @@ public class Park{
     }
 
     //Mostrar las reservas de camping
-    public void showCampingReserveList() {
+    public List<Reserve> showCampingReserveList() {
+        List<Reserve> campingReserves = null;
         for(Map.Entry<Client, ArrayList<Reserve>> entry : reserveList2.entrySet()) {
             Client client = entry.getKey();
             ArrayList<Reserve> reservas = entry.getValue();
 
             //Acá se filtra para reservas de camping
-            List<Reserve> campingReserves = reservas.stream().filter(reserve -> reserve instanceof  CampingReserve).toList();
-
-            if(!campingReserves.isEmpty()) {
-                System.out.println("Reservas de camping para cliente "+client.getRun()+ "(" + client.getName() + ":");
-                for (Reserve reserve : campingReserves) {
-                    reserve.showDetails();
-                }
-            }
-            else {
-                System.out.println("No existen reservas para el camping");
-            }
+            campingReserves = reservas.stream().filter(reserve -> reserve instanceof  CampingReserve).toList();
         }
+        
+        return campingReserves;
     }
 
     //Mostrar las reservas de cabañas
