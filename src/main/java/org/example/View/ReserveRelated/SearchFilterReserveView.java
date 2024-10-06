@@ -11,10 +11,10 @@ import javax.swing.JTextPane;
  *
  * @author doctorjellybeans
  */
-public class SearchFilterReserve extends javax.swing.JFrame {
+public class SearchFilterReserveView extends javax.swing.JFrame {
 
     // COnstructor
-    public SearchFilterReserve() {
+    public SearchFilterReserveView() {
         initComponents();
     }
 

@@ -8,12 +8,12 @@ package org.example.View.ReserveRelated;
  *
  * @author doctorjellybeans
  */
-public class SearchIDReserve extends javax.swing.JFrame {
+public class EditReserveView extends javax.swing.JFrame {
 
     /**
-     * Creates new form SearchIDReserve
+     * Creates new form EditReserve
      */
-    public SearchIDReserve() {
+    public EditReserveView() {
         initComponents();
     }
 
@@ -59,20 +59,21 @@ public class SearchIDReserve extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SearchIDReserve.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditReserveView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SearchIDReserve.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditReserveView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SearchIDReserve.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditReserveView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SearchIDReserve.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditReserveView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SearchIDReserve().setVisible(true);
+                new EditReserveView().setVisible(true);
             }
         });
     }
