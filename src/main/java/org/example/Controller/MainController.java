@@ -27,23 +27,36 @@ public class MainController {
     }
     
     public void openClientWindow() {
-        
+       ClientView clientView = new ClientView();
+       new ClientController(clientView);
+       clientView.setLocationRelativeTo(null);
+       clientView.setVisible(true);
+       
     }
     
     public void openReserveWindow() {
-    
+       ReserveView reserveView = new ReserveView();
+       new ReserveController(reserveView);
+       reserveView.setLocationRelativeTo(null);
+       reserveView.setVisible(true);
     }
     
     public void openFeeWindow() {
-    
+       FeeView feeView = new FeeView();
+       new FeeController(feeView);
+       feeView.setLocationRelativeTo(null);
+       feeView.setVisible(true);
     }
     
     public void openParkWindow() {
-        
+       ParkView parkView = new ParkView();
+       new ParkController(parkView);
+       parkView.setLocationRelativeTo(null);
+       parkView.setVisible(true);
     }
     
     public void exit() {
-    
+        System.exit(0);
     }
     
 }
