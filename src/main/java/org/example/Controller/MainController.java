@@ -7,15 +7,20 @@ import org.example.View.FeeRelated.FeeView;
 import org.example.View.ClientRelated.ClientView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 import org.example.Model.*;
 import org.example.View.*;
 
 public class MainController {
 
     private MenuView mainView;
+    private Fee actualFee;
 
-    public MainController(MenuView mainView, String path) {
+    public MainController(MenuView mainView, String path, Scanner scanner, Park park, DateTimeFormatter formatter, Fee fee) {
         //String filePath = path;
+        //Se leen los valores iniciales del codigo
+        this.actualFee = fee;
         
         // Asignar vista
         this.mainView = mainView;
@@ -47,7 +52,7 @@ public class MainController {
     
     public void openFeeWindow() {
        FeeView feeView = new FeeView();
-       new FeeController(feeView);
+       new FeeController(feeView, actualFee);
        feeView.setLocationRelativeTo(null);
        feeView.setVisible(true);
     }
