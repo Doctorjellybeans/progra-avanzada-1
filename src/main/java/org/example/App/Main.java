@@ -36,6 +36,7 @@ public class Main {
         //Se inicializa la vista
         MenuView mainView = new MenuView();
         mainView.setVisible(true);
+        mainView.setLocationRelativeTo(null);
         
         //Se inicializa el controlador
         MainController controller = new MainController(mainView, clientMap, park, fee, filePath);
