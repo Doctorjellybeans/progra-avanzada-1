@@ -6,15 +6,15 @@ public abstract class Reserve {
 
     // Atributos para clase-subclase
     protected int reserveId;
-    protected Client client;
+    protected String clientId;
     protected LocalDate startDate;
     protected LocalDate endDate;
     protected double totalCost;
 
     // Constructor
-    public Reserve(int reserveId, Client client, LocalDate startDate, LocalDate endDate) {
+    public Reserve(int reserveId, String clientId, LocalDate startDate, LocalDate endDate) {
         this.reserveId = reserveId;
-        this.client = client;
+        this.clientId = clientId;
         this.startDate = startDate;
         this.endDate = endDate;
         this.totalCost = 0.0;
@@ -41,12 +41,12 @@ public abstract class Reserve {
         this.reserveId = reserveId;
     }
 
-    public Client getClient() {
-        return client;
+    public String getClientId() {
+        return clientId;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClient(String client) {
+        this.clientId = clientId;
     }
 
     public LocalDate getStartDate() {

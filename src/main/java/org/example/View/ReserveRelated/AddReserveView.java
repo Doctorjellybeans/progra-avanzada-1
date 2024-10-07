@@ -26,21 +26,113 @@ public class AddReserveView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        runScrollPanel = new javax.swing.JScrollPane();
+        runTextPanel = new javax.swing.JTextPane();
+        clientConfirmButton = new javax.swing.JButton();
+        clientReturnButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        nameScrollPanel = new javax.swing.JScrollPane();
+        nameTextPanel = new javax.swing.JTextPane();
+        jLabel3 = new javax.swing.JLabel();
+        emailScrollPanel = new javax.swing.JScrollPane();
+        emailTextPanel = new javax.swing.JTextPane();
+        phoneScrollPanel = new javax.swing.JScrollPane();
+        phoneTextPanel = new javax.swing.JTextPane();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Ingresa una id:");
+
+        jLabel4.setText("Ingresa un numero de telefono:");
+
+        runScrollPanel.setViewportView(runTextPanel);
+
+        clientConfirmButton.setText("Confirmar");
+        clientConfirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientConfirmButtonActionPerformed(evt);
+            }
+        });
+
+        clientReturnButton.setText("Salir");
+        clientReturnButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientReturnButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Ingresa un nombe:");
+
+        nameScrollPanel.setViewportView(nameTextPanel);
+
+        jLabel3.setText("Ingresa un email:");
+
+        emailScrollPanel.setViewportView(emailTextPanel);
+
+        phoneScrollPanel.setViewportView(phoneTextPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(clientReturnButton))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(phoneScrollPanel)
+                            .addComponent(emailScrollPanel)
+                            .addComponent(nameScrollPanel)
+                            .addComponent(runScrollPanel)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(clientConfirmButton)))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(runScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nameScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(emailScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phoneScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(clientConfirmButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(clientReturnButton))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void clientConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientConfirmButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientConfirmButtonActionPerformed
+
+    private void clientReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientReturnButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientReturnButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +171,19 @@ public class AddReserveView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton clientConfirmButton;
+    private javax.swing.JButton clientReturnButton;
+    private javax.swing.JScrollPane emailScrollPanel;
+    private javax.swing.JTextPane emailTextPanel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane nameScrollPanel;
+    private javax.swing.JTextPane nameTextPanel;
+    private javax.swing.JScrollPane phoneScrollPanel;
+    private javax.swing.JTextPane phoneTextPanel;
+    private javax.swing.JScrollPane runScrollPanel;
+    private javax.swing.JTextPane runTextPanel;
     // End of variables declaration//GEN-END:variables
 }

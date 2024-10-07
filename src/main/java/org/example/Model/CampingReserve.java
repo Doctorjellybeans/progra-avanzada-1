@@ -9,8 +9,8 @@ public class CampingReserve extends Reserve {
     private static final double CAMPING_FEE = 20.0;
 
     // Constructor
-    public CampingReserve(int reserveId, Client client, LocalDate startDate, LocalDate endDate, int numTent) {
-        super(reserveId, client, startDate, endDate);
+    public CampingReserve(int reserveId, String clientId, LocalDate startDate, LocalDate endDate, int numTent) {
+        super(reserveId, clientId, startDate, endDate);
         this.numTent = numTent;
         calculateCost();
     }
@@ -26,12 +26,12 @@ public class CampingReserve extends Reserve {
     public void showDetails() {
         System.out.println("#------------------ RESERVE INFO ------------------#");
         System.out.println("Id de la reserva de camping: " + reserveId);
-        System.out.println("Run cliente asociado: " + client.getRun());
+        System.out.println("Run cliente asociado: " + clientId);
         System.out.println("Fecha de inicio : " + startDate);
         System.out.println("Fecha de termino: " + endDate);
         System.out.println("Costo total: " + totalCost);
         System.out.println("#------------------ RESERVE INFO ------------------#");
-        return;
+        
     }
 
     // Getters and setters

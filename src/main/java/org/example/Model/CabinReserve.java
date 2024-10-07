@@ -9,8 +9,8 @@ public class CabinReserve extends Reserve {
     private static final double CABIN_FEE = 100.0;
 
     // Constructor
-    public CabinReserve(int reserveId, Client client, LocalDate startDate, LocalDate endDate, int numPerson) {
-        super(reserveId,client,startDate,endDate);
+    public CabinReserve(int reserveId, String clientId, LocalDate startDate, LocalDate endDate, int numPerson) {
+        super(reserveId,clientId,startDate,endDate);
         this.numPerson = numPerson;
         calculateCost();
     }
@@ -26,7 +26,7 @@ public class CabinReserve extends Reserve {
     public void showDetails() {
         System.out.println("#------------------ RESERVE INFO ------------------#");
         System.out.println("Id de la reserva de cabaña: " + reserveId);
-        System.out.println("Run del cliente asociado: " + client.getRun());
+        System.out.println("Run del cliente asociado: " + clientId);
         System.out.println("Fecha de inicio : " + startDate);
         System.out.println("Fecha de termino: " + endDate);
         System.out.println("Numero de personas: " + numPerson);

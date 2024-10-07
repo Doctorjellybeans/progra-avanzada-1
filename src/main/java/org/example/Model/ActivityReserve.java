@@ -10,8 +10,8 @@ public class ActivityReserve extends Reserve {
     private static final double ACTIVITY_FEE = 15.0;
 
     // Constructor
-    public ActivityReserve(int reserveId, Client client, LocalDate startDate, LocalDate endDate, String activityName, int numPeople) {
-        super(reserveId, client, startDate, endDate);
+    public ActivityReserve(int reserveId, String clientId, LocalDate startDate, LocalDate endDate, String activityName, int numPeople) {
+        super(reserveId, clientId, startDate, endDate);
         this.activityName = activityName;
         this.numPeople = numPeople;
     }
@@ -27,15 +27,13 @@ public class ActivityReserve extends Reserve {
     public void showDetails() {
         System.out.println("#------------------ RESERVE INFO ------------------#");
         System.out.println("ID actividad guiada: " + reserveId);
-        System.out.println("Run cliente asociado: " + client.getRun());
+        System.out.println("Run cliente asociado: " + clientId);
         System.out.println("Fecha de inicio: " + startDate);
         System.out.println("Fecha de termino: " + endDate);
         System.out.println("Nombre de la actividad: " +  activityName);
         System.out.println("Numero de participantes: " + numPeople);
         System.out.println("Costo total: " + totalCost);
         System.out.println("#------------------ ------------ ------------------#");
-
-        return;
     }
 
     // Getters and setters

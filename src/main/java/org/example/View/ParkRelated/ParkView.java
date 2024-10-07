@@ -96,13 +96,14 @@ public class ParkView extends javax.swing.JFrame {
     
     //Metodos
     public void showCabinClients(List<Reserve> list){
+        
+        
         StringBuilder reserveList = new StringBuilder();
         reserveList.append("Lista de clientes en cabañas: \n");
         
         for( Reserve reserve : list){
-            Client actualClient = reserve.getClient();
-            reserveList.append(reserve.getReserveId()).append(" \n ").append("      ")
-                    .append(actualClient.getName()).append("--").append(actualClient.getRun());
+            String actualClient = reserve.getClientId();
+            reserveList.append(reserve.getReserveId()).append(" \n ").append("      ").append(actualClient);
         }
     
         javax.swing.JOptionPane.showMessageDialog(null, reserveList.toString(), "Clientes en cabañas", javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -113,9 +114,8 @@ public class ParkView extends javax.swing.JFrame {
         reserveList.append("Lista de clientes en actividades: \n");
         
         for( Reserve reserve : list){
-            Client actualClient = reserve.getClient();
-            reserveList.append(reserve.getReserveId()).append(" \n ").append("      ")
-                    .append(actualClient.getName()).append("--").append(actualClient.getRun());
+            String actualClient = reserve.getClientId();
+            reserveList.append(reserve.getReserveId()).append(" \n ").append("      ").append(actualClient);
         }
     
         javax.swing.JOptionPane.showMessageDialog(null, reserveList.toString(), "Clientes en actividades", javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -126,9 +126,8 @@ public class ParkView extends javax.swing.JFrame {
         reserveList.append("Lista de clientes en camping: \n");
         
         for( Reserve reserve : list){
-            Client actualClient = reserve.getClient();
-            reserveList.append(reserve.getReserveId()).append(" \n ").append("      ")
-                    .append(actualClient.getName()).append("--").append(actualClient.getRun());
+            String actualClient = reserve.getClientId();
+            reserveList.append(reserve.getReserveId()).append(" \n ").append("      ").append(actualClient);
         }
     
         javax.swing.JOptionPane.showMessageDialog(null, reserveList.toString(), "Clientes en campings", javax.swing.JOptionPane.INFORMATION_MESSAGE);

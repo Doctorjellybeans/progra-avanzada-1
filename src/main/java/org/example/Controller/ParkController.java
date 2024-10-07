@@ -30,8 +30,10 @@ public class ParkController {
     // Acciones de los JButtons en la vista
     private void clientsInActivities() {
         List<Reserve> reserveList = park.showActivityReserveList();
-        if (reserveList.isEmpty()) {
-            parkView.showErrorMessage("No hay clientes con reservas en los campings");
+        if (reserveList == null) {
+            parkView.showErrorMessage("ERROR, lista nula");
+        } else  if (reserveList.isEmpty()){
+            parkView.showErrorMessage("No hay clientes con reservas en las actividades");
         } else {
             parkView.showCampingClients(reserveList);
         }
@@ -40,8 +42,11 @@ public class ParkController {
     
     private void clientsInCabin() {
         List<Reserve> reserveList = park.showCabinReserveList();
-        if (reserveList.isEmpty()) {
-            parkView.showErrorMessage("No hay clientes con reservas en los campings");
+        
+        if (reserveList == null) {
+            parkView.showErrorMessage("ERROR, lista nula");
+        } else  if (reserveList.isEmpty()){
+            parkView.showErrorMessage("No hay clientes con reservas en las cabañas");
         } else {
             parkView.showCampingClients(reserveList);
         }
@@ -49,7 +54,9 @@ public class ParkController {
     
     private void clientsInCamping() {
         List<Reserve> reserveList = park.showCampingReserveList();
-        if (reserveList.isEmpty()) {
+        if (reserveList == null) {
+            parkView.showErrorMessage("ERROR, lista nula");
+        } else  if (reserveList.isEmpty()){
             parkView.showErrorMessage("No hay clientes con reservas en los campings");
         } else {
             parkView.showCampingClients(reserveList);
