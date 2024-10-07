@@ -17,12 +17,14 @@ public class MainController {
     private MenuView mainView;
     private Fee actualFee;
     private Park actualPark;
+    private ClientMap clientMapModel;
 
-    public MainController(MenuView mainView, String path, Park park, DateTimeFormatter formatter, Fee fee) {
+    public MainController(MenuView mainView, String path, Park park, DateTimeFormatter formatter, Fee fee, ClientMap clientMap) {
         //String filePath = path;
         //Se leen los valores iniciales del codigo
         this.actualFee = fee;
         this.actualPark = park;
+        this.clientMapModel = clientMap;
         
         // Asignar vista
         this.mainView = mainView;
@@ -48,7 +50,7 @@ public class MainController {
     
     public void openReserveWindow() {
        ReserveView reserveView = new ReserveView();
-       new ReserveController(reserveView);
+       new ReserveController(reserveView, actualPark, clientMapModel);
        reserveView.setLocationRelativeTo(null);
        reserveView.setVisible(true);
     }

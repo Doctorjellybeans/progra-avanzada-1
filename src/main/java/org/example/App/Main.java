@@ -39,7 +39,7 @@ public class Main {
         mainView.setLocationRelativeTo(null);
         
         //Se inicializa el controlador
-        MainController controller = new MainController(mainView, filePath, park, formatter, fee);
+        MainController controller = new MainController(mainView, filePath, park, formatter, fee, clientMap);
         
         dataSaver.saveClientsToCSV(filePath);
         //

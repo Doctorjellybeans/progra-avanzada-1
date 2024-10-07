@@ -4,6 +4,10 @@
  */
 package org.example.View.ReserveRelated;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+
 /**
  *
  * @author doctorjellybeans
@@ -29,25 +33,33 @@ public class AddReserveView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         runScrollPanel = new javax.swing.JScrollPane();
-        runTextPanel = new javax.swing.JTextPane();
+        ReserveID = new javax.swing.JTextPane();
         clientConfirmButton = new javax.swing.JButton();
-        clientReturnButton = new javax.swing.JButton();
+        Salida = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         nameScrollPanel = new javax.swing.JScrollPane();
-        nameTextPanel = new javax.swing.JTextPane();
+        ClientID = new javax.swing.JTextPane();
         jLabel3 = new javax.swing.JLabel();
         emailScrollPanel = new javax.swing.JScrollPane();
-        emailTextPanel = new javax.swing.JTextPane();
+        StartDate = new javax.swing.JTextPane();
         phoneScrollPanel = new javax.swing.JScrollPane();
-        phoneTextPanel = new javax.swing.JTextPane();
+        EndDate = new javax.swing.JTextPane();
+        jLabel5 = new javax.swing.JLabel();
+        phoneScrollPanel1 = new javax.swing.JScrollPane();
+        Quantity = new javax.swing.JTextPane();
+        jLabel6 = new javax.swing.JLabel();
+        reserveType = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Ingresa una id:");
+        jLabel1.setText("Ingresa una ID para la reserva:");
 
-        jLabel4.setText("Ingresa un numero de telefono:");
+        jLabel4.setText("Ingresa fecha de salida:");
 
-        runScrollPanel.setViewportView(runTextPanel);
+        runScrollPanel.setViewportView(ReserveID);
 
         clientConfirmButton.setText("Confirmar");
         clientConfirmButton.addActionListener(new java.awt.event.ActionListener() {
@@ -56,134 +68,181 @@ public class AddReserveView extends javax.swing.JFrame {
             }
         });
 
-        clientReturnButton.setText("Salir");
-        clientReturnButton.addActionListener(new java.awt.event.ActionListener() {
+        Salida.setText("Salir");
+        Salida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clientReturnButtonActionPerformed(evt);
+                SalidaActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Ingresa un nombe:");
+        jLabel2.setText("Ingresa un ID para el cliente:");
 
-        nameScrollPanel.setViewportView(nameTextPanel);
+        nameScrollPanel.setViewportView(ClientID);
 
-        jLabel3.setText("Ingresa un email:");
+        jLabel3.setText("Ingresa fecha de entrada:");
 
-        emailScrollPanel.setViewportView(emailTextPanel);
+        emailScrollPanel.setViewportView(StartDate);
 
-        phoneScrollPanel.setViewportView(phoneTextPanel);
+        phoneScrollPanel.setViewportView(EndDate);
+
+        jLabel5.setText("Ingresa cantidad de personas o carpas");
+
+        phoneScrollPanel1.setViewportView(Quantity);
+
+        jLabel6.setText("Ingrese tipo de reserva");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel7.setText("1 para Camping");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel8.setText("2 para Actividad");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel9.setText("3 para Cabaña");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(clientReturnButton))
             .addGroup(layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(clientConfirmButton)
+                        .addGap(25, 25, 25)
+                        .addComponent(Salida))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel5)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(phoneScrollPanel)
+                        .addComponent(emailScrollPanel)
+                        .addComponent(nameScrollPanel)
+                        .addComponent(runScrollPanel)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(phoneScrollPanel1)))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                    .addComponent(reserveType)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(phoneScrollPanel)
-                            .addComponent(emailScrollPanel)
-                            .addComponent(nameScrollPanel)
-                            .addComponent(runScrollPanel)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(clientConfirmButton)))
-                .addContainerGap(181, Short.MAX_VALUE))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(runScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(runScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(reserveType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nameScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(emailScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nameScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(emailScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phoneScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(clientConfirmButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(clientReturnButton))
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phoneScrollPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clientConfirmButton)
+                    .addComponent(Salida))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void SalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SalidaActionPerformed
+
     private void clientConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientConfirmButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_clientConfirmButtonActionPerformed
 
-    private void clientReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientReturnButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_clientReturnButtonActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddReserveView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddReserveView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddReserveView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddReserveView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AddReserveView().setVisible(true);
-            }
-        });
+    public JTextPane getClientID() {
+        return ClientID;
     }
 
+    public JTextPane getEndDate() {
+        return EndDate;
+    }
+
+    public JTextPane getQuantity() {
+        return Quantity;
+    }
+
+    public JTextPane getReserveID() {
+        return ReserveID;
+    }
+
+    public JButton getSalida() {
+        return Salida;
+    }
+
+    public JTextPane getStartDate() {
+        return StartDate;
+    }
+
+    public JButton getClientConfirmButton() {
+        return clientConfirmButton;
+    }
+
+    public JTextField getReserveType() {
+        return reserveType;
+    }
+
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextPane ClientID;
+    private javax.swing.JTextPane EndDate;
+    private javax.swing.JTextPane Quantity;
+    private javax.swing.JTextPane ReserveID;
+    private javax.swing.JButton Salida;
+    private javax.swing.JTextPane StartDate;
     private javax.swing.JButton clientConfirmButton;
-    private javax.swing.JButton clientReturnButton;
     private javax.swing.JScrollPane emailScrollPanel;
-    private javax.swing.JTextPane emailTextPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane nameScrollPanel;
-    private javax.swing.JTextPane nameTextPanel;
     private javax.swing.JScrollPane phoneScrollPanel;
-    private javax.swing.JTextPane phoneTextPanel;
+    private javax.swing.JScrollPane phoneScrollPanel1;
+    private javax.swing.JTextField reserveType;
     private javax.swing.JScrollPane runScrollPanel;
-    private javax.swing.JTextPane runTextPanel;
     // End of variables declaration//GEN-END:variables
 }

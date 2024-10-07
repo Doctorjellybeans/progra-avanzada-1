@@ -19,12 +19,14 @@ public class Park{
 
     public Park(int maxCampingCapacity, int maxCabinCapacity, int maxActitvityCapacity) {
         this.reserveList2 = new HashMap<>();
+        this.reserveList = new ArrayList<>();
         this.maxCampingCapacity = maxCampingCapacity;
         this.maxCabinCapacity = maxCabinCapacity;
         this.maxActitvityCapacity = maxActitvityCapacity;
     }
 
     // Metodos
+    
     // Añade una reserva a la lista de reservas
 
     public void addReserve(Client client, Reserve reserve) {
@@ -36,7 +38,9 @@ public class Park{
 
         if (this.isFull(reserve)) {
             reservesOfClient.add(reserve);
+            reserveList.add(reserve);
             System.out.println("Reserva añadida exitosamente");
+            
         } else {
             System.out.println("Capacidad maxima alcanzada para el tipo de reserva");
         }
@@ -52,6 +56,8 @@ public class Park{
         if (this.isFull(reserve)) {
             reservesOfClient.add(reserve);
             reservesOfClient.add(reserve2);
+            reserveList.add(reserve);
+            reserveList.add(reserve2);
             System.out.println("Reservas alcanzadas exitosamente");
         }
         else {
@@ -105,7 +111,27 @@ public class Park{
             for (Reserve reserva : reservas) {
                 reserva.showDetails();
             }
-        }    }
+        }    
+    }
+    
+    public Reserve searchReserve(String reserveId) {
+ 
+        // Buscar cliente con la ID proporcionada
+        Reserve reserveToFind = null;
+        for (Reserve reserve : reserveList) {
+            if (Objects.equals(reserve.getReserveId(), reserveId)) {
+                reserveToFind = reserve;
+                break;
+            }
+        }
+
+        if (reserveToFind == null) {
+            System.out.println("La ID ingresada no existe.");
+            return null;
+        }
+        return reserveToFind;
+           
+    }
 
     //Busqueda filtrada por tipo de reserva
     public void filteredSearch(Scanner scanner){
