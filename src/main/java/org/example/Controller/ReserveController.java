@@ -134,7 +134,7 @@ public class ReserveController {
         ReserveTypeView filtered = new ReserveTypeView();
         
         filtered.getSalida().addActionListener(e -> {
-
+                filtered.dispose();
         });
     }
     
